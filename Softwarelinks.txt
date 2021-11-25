@@ -12,7 +12,7 @@ What will you need to follow the course?
 	https://www.r-project.org/about.html
 
 
-2. Python (please install the following libraries: seaborn, matplotlib, numpy, statsmodel, pandas)
+2. Python (please install the following libraries: seaborn, matplotlib, numpy, statsmodel, pandas, fonemas, silabeador)
 	https://www.python.org
 
 
