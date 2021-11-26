@@ -1,6 +1,6 @@
 <a>Góngora
 <t>Al campo salió, el estío
-<g>Romance
+<g>Romance lírico
 <f>1614
 	Al campo salió, el estío,
 	un serafín labrador,

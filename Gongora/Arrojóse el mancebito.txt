@@ -1,7 +1,7 @@
 <a>Góngora
 <t>Arrojóse el mancebito
 <tt>Segunda parte de la fábula de los amores de Hero y Leandro, y de sus muertes
-<g>Romance
+<g>Romance burlesco
 <f>1589
 	Arrojóse el mancebito
 	al charco de los atunes,

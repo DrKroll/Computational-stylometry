@@ -1,7 +1,7 @@
 <a>Góngora
 <t>Ahora que estoy de espacio
-<g>Romance
-<f>1588
+<g>Romance burlesco
+<f>1588 (1585?)
 	Ahora que estoy de espacio
 	cantar quiero en mi bandurria
 	lo que en más grave instrumento

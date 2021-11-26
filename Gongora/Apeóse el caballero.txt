@@ -1,6 +1,6 @@
 <a>Góngora
 <t>Apeóse el caballero
-<g>Romance
+<g>Romance amoroso (caballeresco)
 <f>1610
 	Apeóse el caballero
 	(víspera era, de san Juan)

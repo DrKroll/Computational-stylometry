@@ -1,6 +1,6 @@
 <a>Góngora
 <t>Aquí entre la verde juncia
-<g>Romance
+<g>Romance amoroso
 <f>1584
 	Aquí entre la verde juncia
 	quiero, como el blanco cisne

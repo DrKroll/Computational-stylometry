@@ -1,7 +1,7 @@
 <a>Góngora
 <t>Al pie de un álamo negro
 <tt>A la vida de los hidalgos pobres que siguen la corte
-<g>Romance
+<g>Romance burlesco
 <f>1614
 	Al pie de un álamo negro,
 	y, más que negro, bozal,

@@ -1,6 +1,6 @@
 <a>Góngora
 <t>¿No me bastaba el peligro...?
-<g>Romance
+<g>Romance lírico
 <f>1593
 	¿No me bastaba el peligro
 	de una grave enfermedad,

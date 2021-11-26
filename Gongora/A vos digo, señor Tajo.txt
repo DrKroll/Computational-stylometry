@@ -1,6 +1,6 @@
 <a>Góngora
 <t>A vos digo, señor Tajo
-<g>Romance
+<g>Romance satírico
 <f>1591
 	A vos digo, señor Tajo,
 	el de las ninfas y ninfos,

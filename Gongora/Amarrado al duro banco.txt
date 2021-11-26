@@ -1,6 +1,7 @@
 <a>Góngora
 <t>Amarrado al duro banco
-<g>Romance
+<g>Romance lírico (de cautivo)
+<f>1583
 	Amarrado al duro banco
 	de una galera turquesca,
 	ambas manos en el remo

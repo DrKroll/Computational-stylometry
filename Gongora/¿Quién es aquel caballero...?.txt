@@ -1,6 +1,6 @@
 <a>Góngora
 <t>¿Quién es aquel caballero...?
-<g>Romance
+<g>Romance satírico
 <f>1597
 	-¿Quién es aquel caballero
 	que a mi puerta dijo: Abrid?

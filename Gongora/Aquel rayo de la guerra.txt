@@ -1,7 +1,7 @@
 <a>Góngora
 <t>Aquel rayo de la guerra
+<g>Romance moriscos-novelescos
 <f>1584
-<g>Romance
 	Aquel rayo de la guerra,
 	alférez mayor del reino,
 	tan galán como valiente

@@ -1,6 +1,6 @@
 <a>Góngora
 <t>¡Oh cuán bien que acusa Alcino...!
-<g>Romance
+<g>Romance lírico
 <f>1602
 	¡Oh cuán bien que acusa Alcino,
 	Orfeo de Guadïana,

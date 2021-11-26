@@ -1,6 +1,6 @@
 <a>Góngora
 <t>¡Qué necio que era yo antaño...!
-<g>Romance
+<g>Romance lírico o burlesco
 <f>1590
 	¡Qué necio que era yo antaño,
 	aunque hogaño soy un bobo!
