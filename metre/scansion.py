@@ -68,7 +68,6 @@ def entradadf(indice, texto, p, esperadas, cuentaritmos = {}):
     df.at[indice, 'Rima'] = ason
     df.at[indice, 'Consonancia'] = rim.lower()
     df.at[indice, 'Ritmo'] = rit
-    print(df[['Texto', 'Slbs']])
 
     cuentaritmos = diccionario_ritmos(sil, rit, cuentaritmos)
 
@@ -112,7 +111,7 @@ for index, fila in df.iterrows():
     if pieza != fila['Pieza']:
         guarda(df[df['Pieza'] == pieza], pieza)
         pieza = fila['Pieza']
-#    screen_clear()
+    screen_clear()
     print(f'\nObra:\t\t{fila["Pieza"]}\nJornada:\t{fila["Jornada"]}\n'\
           f'Texto:\t\t{fila["Texto"]}\n')
     bar.next()
@@ -142,4 +141,3 @@ for index, fila in df.iterrows():
 bar.finish()
 guarda(df[df['Pieza'] == pieza], pieza)
 print(f'El programa se ejecutó en {time.time() - start_time} segundos')
-print(cuentaritmos)
