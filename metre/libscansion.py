@@ -125,6 +125,7 @@ class lineatexto:
         noun_flag = False
 
         for idx, palabra in enumerate(palabras[::-1]):
+            print(palabra)
             palabra = self.__parchea_palabra(palabra)
             ton = palabra['ton']
             txt = palabra['text']
@@ -135,18 +136,21 @@ class lineatexto:
                                    'NOUN', 'PROPN'] or txt in tonicos:
                 ton = True
             else:
+                print(txt, pos)
                 if pos in postonicos:
                     ton = True
                 if txt in conjat:
                     ton = False
-                    if txt.lower() != 'y':
-                        number_flag = False
-                if pos == ('NUM' and txt not in self.numeros):
+                if pos == ('NUM' or txt in self.numeros):
+                    print(txt, pos)
                     if number_flag == False:
                         ton = True
-                    number_flag = True
+                        number_flag = True
+                    else:
+                        ton = False
                 else:
-                    number_flag = False
+                    if txt.lower() != 'y':
+                        number_flag = False
 
                 if pos == 'DET':
                     if fts['PronType'] == 'Poss' or fts['Poss'] == 'Yes':
@@ -253,7 +257,7 @@ class silabas:
             else:
                 preferencia += 1
         elif not all(x.isupper() for x in [uno[-1], dos[0]]):
-            if uno in 'ieou' and dos[0] == uno.upper():                          # conjunctions y e o u + same sound stressed  
+            if uno in 'ieou' and dos[0] == uno.upper():                          # conjunctions y e o u + same sound stressed
                 preferencia = -1
             else:
                     preferencia += 2
@@ -285,7 +289,7 @@ class silabas:
                                                                   segunda,
                                                                   preferencia))
                                      )
-            
+
 
         #sinéresis
         for i, palabra in enumerate(palabras):
@@ -322,8 +326,9 @@ class silabas:
                         diptongo[1])
         elif diptongo[0][-1] in 'IU' and  diptongo[1][0] in 'aeiou':
             diptongo = (diptongo[0][:-1] +
-                        nosilabicas[diptongo[0][-1]] +
-                        diptongo[1][0].upper())
+                        #                nosilabicas[diptongo[0][-1]] +
+                        #                diptongo[1][0].upper())
+                        diptongo[0][-1] + nosilabicas[diptongo[1][0]])
         else:
             diptongo = (diptongo[0][:-1] +
                         nosilabicas[diptongo[0][-1]] +
