@@ -141,7 +141,7 @@ class lineatexto:
                     ton = True
                 if txt in conjat:
                     ton = False
-                if pos == ('NUM' or txt not in self.numeros):
+                if pos == ('NUM' and txt not in self.numeros):
                     print(txt, pos)
                     if number_flag == False:
                         ton = True
