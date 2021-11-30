@@ -10,14 +10,16 @@ What will you need to follow the course?
 1. Rstudio & R (please install the package stylo)
 	https://www.rstudio.com
 	https://www.r-project.org/about.html
+	Please read the following instructions carefully, depending on your operating system you will need to install some libraries: https://cran.r-project.org/web/packages/nat/vignettes/Installation.html
 
 
-2. Python (please install the following libraries: seaborn, matplotlib, numpy, statsmodel, pandas, fonemas, silabeador)
+2. Python (please install the following libraries: seaborn, matplotlib, numpy, statsmodel, pandas, progress, fonemas, silabeador)
 	https://www.python.org
+	To install fonemas and silabeador either use pip or download them from the following github repositories in your working directory: https://github.com/fsanzl/fonemas; https://github.com/fsanzl/silabeador)
 
 
 3. Jupyter
-Please feel free to use either Jupyter Notebook or Jupyter Lab
+Please feel free to use either Jupyter Notebook or Jupyter Lab. We recommend to use this IDE to follow the different code examples in detail, but you might as well use your usual development environment.
 	https://jupyter.org
 
 
