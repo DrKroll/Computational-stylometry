@@ -8,7 +8,7 @@ import time                                 # Librerías de control
 from progress.bar import Bar
 import pandas as pd                         # Librerías operativas
 import re
-from libescansiondos import silabas as slb
+from libscansion import silabas as slb
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
 start_time = time.time()
