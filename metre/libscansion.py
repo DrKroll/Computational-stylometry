@@ -162,6 +162,8 @@ class lineatexto:
                                 ton = True
                         else:
                             ton = True
+                    elif fts['PronType'] in ['Dem']:
+                        ton = True
                     elif fts['Case'] and fts['Case'] in ['Acc,Dat',
                                                          'Dat', 'Acc']:
                         ton = False
