@@ -52,10 +52,10 @@ class lineatexto:
             palabras = re.sub(r'\s*\.[\.\s]+', ', ', palabras)
             palabras = palabras.strip()
             palabras = palabras[0].upper()+palabras[1:]
-        usadas = []
         verso =  nlp(palabras)
         palabras =[]
         for sentence in verso.sentences:
+            usadas = []
             for word in sentence.words:
                 if word.parent.id not in usadas:
                     usadas.append(word.parent.id)
@@ -125,7 +125,6 @@ class lineatexto:
         noun_flag = False
 
         for idx, palabra in enumerate(palabras[::-1]):
-            print(palabra)
             palabra = self.__parchea_palabra(palabra)
             ton = palabra['ton']
             txt = palabra['text']
@@ -136,13 +135,11 @@ class lineatexto:
                                    'NOUN', 'PROPN'] or txt in tonicos:
                 ton = True
             else:
-                print(txt, pos)
                 if pos in postonicos:
                     ton = True
                 if txt in conjat:
                     ton = False
                 if pos == ('NUM' or txt in self.numeros):
-                    print(txt, pos)
                     if number_flag == False:
                         ton = True
                         number_flag = True
@@ -327,10 +324,12 @@ class silabas:
                         nosilabicas[diptongo[0][-1]] +
                         diptongo[1])
         elif diptongo[0][-1] in 'IU' and  diptongo[1][0] in 'aeiou':
-            diptongo = (diptongo[0][:-1] +
-                        #                nosilabicas[diptongo[0][-1]] +
-                        #                diptongo[1][0].upper())
-                        diptongo[0][-1] + nosilabicas[diptongo[1][0]])
+            if diptongo[1][0] in 'aiou':
+                diptongo = (diptongo[0][:-1] + nosilabicas[diptongo[0][-1]] +
+                            diptongo[1][0].upper())
+            else:
+                diptongo = (diptongo[0][:-1] +
+                            diptongo[0][-1] + nosilabicas[diptongo[1][0]])
         else:
             diptongo = (diptongo[0][:-1] +
                         nosilabicas[diptongo[0][-1]] +
