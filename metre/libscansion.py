@@ -486,14 +486,9 @@ class silabas:
             ajustadas = self.__ajusta_silabas(ajustadas,
                                               sinalefas_potenciales)
         else:
-            print(f'OFFSET {offset}')
             ambiguo = 1
-            if offset < 0:
-                print(sinalefas_potenciales)
+            if offset < 0 and len(sinalefas_potenciales) >= -offset:
                 sinalefas_potenciales = sinalefas_potenciales[0:-offset]
-                #if len(sinalefas_potenciales) >= -offset:
-                #    sinalefas_potenciales = sinalefas_potenciales[0:-offset]
-                #else:
                 ajustadas = self.__ajusta_silabas(ajustadas,
                                                   sinalefas_potenciales)
             else:
