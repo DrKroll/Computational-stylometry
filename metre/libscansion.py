@@ -298,7 +298,6 @@ class silabas:
                     posicion = [i, j-1]
                     segunda = silaba
                     primera = palabra[j-1]
-                    print(vocales, primera[-1], segunda[0])
                     if all(x in vocales for x in [primera[-1], segunda[0]]):
                         print(f' Si {primera} {segunda} {posicion}')
                         if primera[-1] == segunda[0]:
@@ -499,7 +498,8 @@ class silabas:
                                                   sinalefas_potenciales)
             else:
                 print(f'ELSE {offset}')
-                ajustadas = self.__hiato(ajustadas, hiatos_potenciales, offset)
+                if lon_rima not in [1, 2, 3, 4, 5, 9]:
+                    ajustadas = self.__hiato(ajustadas, hiatos_potenciales, offset)
         lon_rima = sum([len(palabra) for palabra in ajustadas]) + rima['suma']
         if lon_rima  != esperadas[0]:
             return self.__corrige_metro(ajustadas, esperadas[1:])
@@ -511,6 +511,7 @@ class silabas:
     def __rima(palabra):
         vocales = 'aeiou'
         suma = {-1: 1, -2: 0, -3: -1}
+        tonica = [-1]
         for idx, silaba in enumerate(palabra[::-1]):
             if any([x.isupper() for x in silaba]):
                 tonica = -idx - 1
