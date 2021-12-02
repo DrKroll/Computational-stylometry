@@ -32,7 +32,7 @@ class lineatexto:
         self.linea = linea
         self.__limpio = self.__parchea_linea(self.__preprocesa(self.linea))
         self.palabras = [x['fon'] for x in
-                         self.__acento_metrico(
+                         self.__acento_prosodico(
                                self.__separa(self.__limpio))]
 
     def __preprocesa(self, palabras):
@@ -90,7 +90,7 @@ class lineatexto:
             if silaba.startswith("'"):
                 if palabra['ton'] is True:
                     silaba = silaba.translate(str.maketrans("aeiou", "AEIOU"))
-                palabra['fon'][idx] = silaba.strip("'").strip()
+            palabra['fon'][idx]  = silaba.replace("'",'').strip()
         return palabra
 
     @staticmethod
@@ -111,7 +111,7 @@ class lineatexto:
             palabra = self.en_mente(palabra)
         return(palabra)
 
-    def __acento_metrico(self, palabras):
+    def __acento_prosodico(self, palabras):
         postonicos = ['ADV', 'NOUN', 'PROPN',
                       'NUM', 'DET.Dem', 'DET.Int', 'DET.Ind', 'PRON.Com',
                       'PRON.Nom']
@@ -266,6 +266,7 @@ class silabas:
         return preferencia
 
     def __busca_sinalefas(self, palabras):
+        print(f'\nPalabras\t {palabras}')
         vocales = 'aeioujwiAEIOU'
         semivocales = 'wjàèò'
         # str.maketrans(semivocales, 'iu'))
@@ -288,8 +289,6 @@ class silabas:
                                                                   segunda,
                                                                   preferencia))
                                      )
-
-
         #sinéresis
         for i, palabra in enumerate(palabras):
             if palabra in habituales:
@@ -297,16 +296,20 @@ class silabas:
             for j, silaba in enumerate(palabra):
                 if j > 0:
                     posicion = [i, j-1]
-                    segunda = silaba ####
+                    segunda = silaba
                     primera = palabra[j-1]
+                    print(vocales, primera[-1], segunda[0])
                     if all(x in vocales for x in [primera[-1], segunda[0]]):
+                        print(f' Si {primera} {segunda} {posicion}')
                         if primera[-1] == segunda[0]:
                             preferencia = 4
                         sinalefas.append((posicion,
-                                        self.__preferencia_sinalefa(primera,
-                                                                    segunda) +
-                                        preferencia -2))
+                                            self.__preferencia_sinalefa(
+                                                primera, segunda) +
+                                            preferencia -2))
+
         sinalefas = sorted(sinalefas, key=lambda tup: (-tup[1], tup[0]))
+        print(f'\nSinalefas {sinalefas}')
         return [silaba[0] for silaba in sinalefas]
 
     @staticmethod
@@ -410,45 +413,63 @@ class silabas:
 
     @staticmethod
     def __busca_hiatos(palabras):
+        print(f'\nPalabras:\t{palabras}')
         triptongos = []
         diptongos = []
         for idx, palabra in enumerate(palabras):
-            for silaba in palabra:
+            for idy, silaba in enumerate(palabra):
                 diptongo = re.search(
                     r'([aeioujw])([aeioujw])([wj]*)',
                     silaba, re.IGNORECASE)
                 if diptongo:
-                    diptongos.append(idx)
+                    diptongos.append((idx,idy))
                     if diptongo.group(3):
-                        triptongos.append(idx)
+                        triptongos.append((idx, idy))
         return diptongos + triptongos
 
     def __hiato(self, palabras, hiatos, diferencia):
+        print(f'Hiatos\t{palabras} {hiatos}')
         preferencia = []
         sem2voc = {'j': 'i', 'w': 'u'}
         for idx in hiatos[::-1]:
-            if palabras[idx] in habituales:
+            if palabras[idx[0]] in habituales:
                 preferencia = [idx] + preferencia
             else:
                 preferencia += [idx]
         for idx in hiatos[0:diferencia]:
-            palabra = palabras[idx]
-            for j, silaba in enumerate(palabra):
-                diptongo = re.search(r'(\w*[jw])([aeiou]\w*)',
-                                     silaba, re.IGNORECASE)
-                if diptongo:
-                    uno = diptongo.group(1)
-                    dos = diptongo.group(2)
-                    hiato = [uno.replace(uno[-1], sem2voc[uno[-1]]),
-                             dos]
-                else:
-                    diptongo = re.search(r'(\w*[aeiou])([jw]\w*)',
-                                         silaba, re.IGNORECASE)
-                    if diptongo:
-                        hiato = [uno,
-                                 dos.replace(dos[0], sem2voc[dos[0]])]
-                        palabra += hiato
-            palabras[idx] = palabra
+            palabra = palabras[idx[0]]
+            silaba = palabra[idx[1]]
+            diptongo = re.search(r'([jw]*)([aeiouAEIOU])([jw]*)', silaba)
+            if len(diptongo.group(3)) >0:
+                dos = diptongo.group(3)
+                uno = diptongo.group(2)
+                hiato = f'{uno} {dos.replace(dos[-1], sem2voc[dos[-1]])}'
+            else:
+                uno = diptongo.group(1)
+                dos = diptongo.group(2)
+                hiato = f'{uno.replace(uno[-1], sem2voc[uno[-1]])} {dos}'
+            palabra = [(index, element) if index != idx[1] else (idx[1], hiato)
+                       for index, element in enumerate(palabra)]
+            palabras[idx[0]] = re.split(' +', ' '.join([x[1]
+                                                        for x in palabra]))
+#
+#
+#            for j, silaba in enumerate(palabra):
+#                diptongo = re.search(r'(\w*[jw])([aeiou]\w*)',
+#                                     silaba, re.IGNORECASE)
+#                uno = diptongo.group(1)
+#                dos = diptongo.group(2)
+#                if diptongo:
+#                    hiato = [uno.replace(uno[-1], sem2voc[uno[-1]]),
+#                             dos]
+#                else:
+#                    diptongo = re.search(r'(\w*[aeiou])([jw]\w*)',
+#                                         silaba, re.IGNORECASE)
+#                    if diptongo:
+#                        hiato = [uno,
+#                                 dos.replace(dos[0], sem2voc[dos[0]])]
+            print(f'{palabras}')
+            #palabras[idx] = palabra
         return palabras
 
     def __corrige_metro(self, silabas, esperadas):
@@ -466,16 +487,19 @@ class silabas:
             ajustadas = self.__ajusta_silabas(ajustadas,
                                               sinalefas_potenciales)
         else:
+            print(f'OFFSET {offset}')
             ambiguo = 1
             if offset < 0:
-                if len(sinalefas_potenciales) >= -offset:
-                    sinalefas_potenciales = sinalefas_potenciales[0:-offset]
-                    ajustadas = self.__ajusta_silabas(ajustadas,
-                                                    sinalefas_potenciales)
-                else:
-                    ajustadas = self.__hiato(ajustadas,
-                                             hiatos_potenciales,
-                                             offset)
+                print(sinalefas_potenciales)
+                sinalefas_potenciales = sinalefas_potenciales[0:-offset]
+                #if len(sinalefas_potenciales) >= -offset:
+                #    sinalefas_potenciales = sinalefas_potenciales[0:-offset]
+                #else:
+                ajustadas = self.__ajusta_silabas(ajustadas,
+                                                  sinalefas_potenciales)
+            else:
+                print(f'ELSE {offset}')
+                ajustadas = self.__hiato(ajustadas, hiatos_potenciales, offset)
         lon_rima = sum([len(palabra) for palabra in ajustadas]) + rima['suma']
         if lon_rima  != esperadas[0]:
             return self.__corrige_metro(ajustadas, esperadas[1:])
