@@ -4,124 +4,125 @@ import re
 import os
 import pandas as pd
 
-jornada = parlamento = verso = 0
+act = speech = verse = 0
 v = [0, 0]
 paux = [0, 0]
 p = ''
-autor = titulo = genero = subgenero = sexo = s ='ø'
+author = title = genre = subgenre = gender = s ='ø'
 
-personaje = 'ACOTACIÓN'
+character = 'STAGE DIR.'
 rtag = re.compile(r'^\s*<(.)>')
 rtext = re.compile(r'<.>(.*)$')
-df = pd.DataFrame(columns=['Autor',
-                           'Pieza',
-                           'Gen',
-                           'Subg',
-                           'Jornada',
-                           'Parlamento',
-                           'Verso',
-                           'Personaje',
-                           'Tipo',
-                           'Sexo',
-                           'Texto'])
-lista_nombres = {}
+df = pd.DataFrame(columns=['Author',
+                           'Title',
+                           'Genre',
+                           'Subgenre',
+                           'Act',
+                           'Speech',
+                           'Verse',
+                           'Character',
+                           'Type',
+                           'Gender',
+                           'Text'])
+names_list = {}
 
 
-def sexa(nombre):
-    nombre = re.sub(r'(.*)\d.*', '\1', nombre).strip()
-    if nombre in lista_nombres:
-        return lista_nombres[nombre]
+def assign_gender(name):
+    name = re.sub(r'(.*)\d.*', '\1', name).strip()
+    if name in names_list:
+        return names_list[name]
     else:
-        if nombre.endswith('A') or (nombre.endswith('AS') or
-                                    nombre.endswith('ᵃ') or
-                                    nombre.endswith('ª') or
-                                    nombre.startswith('DOÑA ')):
+        if name.endswith('A') or (name.endswith('AS') or
+                                    name.endswith('ᵃ') or
+                                    name.endswith('ª') or
+                                    name.startswith('DOÑA ')):
             sx = 'F'
-        elif (nombre.endswith('O') or nombre.endswith('OS') or
-              nombre.endswith('°') or nombre.endswith('º') or
-              nombre.startswith('DON ')):
+        elif (name.endswith('O') or name.endswith('OS') or
+              name.endswith('°') or name.endswith('º') or
+              name.startswith('DON ')):
             sx = 'M'
         else:
             sx = 'X'
-    lista_nombres[nombre] = sx
-    return lista_nombres[nombre]
+    names_list[name] = sx
+    return names_list[name]
 
 
 with open(sys.argv[1], 'r', encoding='utf-8') as f:
-    linea = {'Autor': '', 'Pieza': '', 'Gen': '', 'Subg': '', 'Jornada': 0,
-             'Parlamento': 0, 'Verso': 0, 'Personaje': '', 'Sexo': '',
-             'Tipo': '', 'Texto': ''}
+    linea = {'Author': '', 'Title': '', 'Genre': '', 'Subgenre': '', 'Act': 0,
+             'Speech': 0, 'Verse': 0, 'Character': '', 'Gender': '',
+             'Type': '', 'Text': ''}
     for line in f.readlines():
         flag = 1
         if rtag.match(line):
-            tipo = rtag.search(line).group(1)
-            texto = rtext.search(line).group(1)
-            if tipo.lower() == 'j':
-                jornada += 1
+            type_ch = rtag.search(line).group(1)
+            text = rtext.search(line).group(1)
+            if type_ch.lower() == 'j':
+                act += 1
                 flag = 0
-            elif tipo.lower() == 't':
-                titulo = texto.strip()
+            elif type_ch.lower() == 't':
+                title = text.strip()
                 flag = 0
-            elif tipo.lower() == 'a':
-                autor = texto.strip()
+            elif type_ch.lower() == 'a':
+                author = text.strip()
                 flag = 0
-            elif tipo.lower() == 'g':
-                genero = texto.strip()
+            elif type_ch.lower() == 'g':
+                genre = text.strip()
                 flag = 0
-            elif tipo.lower() == 's':
-                subgenero = texto.strip()
+            elif type_ch.lower() == 's':
+                subgenre = text.strip()
                 flag = 0
-            elif tipo.lower() == 'i':
+            elif type_ch.lower() == 'i':
                 v[1] -= 1
-                verso = v[1]
+                verse = v[1]
                 if line.startswith('\t'):
-                    personaje = 'ACOTACIÓN interna'
+                    character = 'int. STAGE DIR.'
                 else:
-                    personaje = 'ACOTACIÓN'
-                    parlamento = paux[1]
-                sexo = 'ø'
-            elif tipo.lower() in ('p', 'e'):
-                verso = 0
-                personaje = p
-                sexo = s
-                texto = str(line).strip()
+                    character = 'STAGE DIR.'
+                    speech = paux[1]
+                gender = 'ø'
+            elif type_ch.lower() in ('p', 'e'):
+                verse = 0
+                character = p
+                gender = s
+                text = str(line).strip()
             else:
-                verso = 0
-                #personaje = p
-                #sexo = s
+                verse = 0
+                #character = p
+                #gender = s
                 flag = 0
         else:
             if re.match(r'^\s*$', line):
                 flag = 0
             elif not re.match(r'^\t+', line):
-                print(parlamento, paux, paux[0], line)
+                print(speech, paux, paux[0], line)
                 p = line.strip().upper()
                 paux[0] += 1
-                s = sexa(p)
+                s = assign_gender(p)
                 flag = 0
             elif re.match(r'^\t\S', line):
                 v[0] += 1
-                verso = v[0]
-                personaje = p
-                sexo = s
+                verse = v[0]
+                character = p
+                gender = s
             else:
-                verso = v[0]
-                personaje = p
-                sexo = s
-            parlamento = paux[0]
-            texto = str(line).strip()
-        nuevalinea = {'Autor': autor, 'Pieza': titulo, 'Gen': genero,
-                      'Subg': subgenero, 'Jornada': jornada,
-                      'Parlamento': parlamento, 'Verso': verso,
-                      'Personaje': personaje, 'Sexo': sexo, 'Tipo': '',
-                      'Texto': texto}
-        if linea['Verso'] == nuevalinea['Verso']:
-            nuevalinea['Personaje'] == f'{linea["Personaje"]} y' \
-                f'{nuevalinea["Personaje"]}'
-            nuevalinea['Texto'] == f'{linea["Texto"]} {nuevalinea["Texto"]}'
-            if nuevalinea['Sexo'] != linea['Sexo']:
-                nuevalinea['Sexo'] = f'{linea["Sexo"]}{nuevalinea["Sexo"]}'
-        linea = nuevalinea
+                verse = v[0]
+                character = p
+                gender = s
+            speech = paux[0]
+            text = str(line).strip()
+        new_line = {'Author': author, 'Title': title, 'Genre': genre,
+                      'Subgenre': subgenre, 'Act': act,
+                      'Speech': speech, 'Verse': verse,
+                      'Character': character, 'Gender': gender, 'Type': '',
+                      'Text': text}
+        if linea['Verse'] == new_line['Verse']:
+            new_line['Character'] == f'{linea["Character"]} y' \
+                f'{new_line["Character"]}'
+            new_line['Text'] == f'{linea["Text"]} {new_line["Text"]}'
+            if new_line['Gender'] != linea['Gender']:
+                new_line['Gender'] = f'{linea["Gender"]}' \
+                    f'{new_line["Gender"]}'
+        linea = new_line
         if flag == 1:
             print(linea)
             df = df.append(linea, ignore_index=True)

@@ -1,4 +1,4 @@
-Autor,Pieza,Gen,Subg,Jornada,Parlamento,Verso,Personaje,Tipo,Sexo,Texto
+Author,Title,Genre,Subgenre,Act,Speech,Verse,Character,Type,Gender,Text
 Lope,Entre un villano y una Labradora (loa),Loa,ø,0,1,1,VILLANO,,M,¡Que siempre en los grandes días
 Lope,Entre un villano y una Labradora (loa),Loa,ø,0,1,2,VILLANO,,M,sucedan casos extraños!
 Lope,Entre un villano y una Labradora (loa),Loa,ø,0,1,3,VILLANO,,M,"¡oh, nunca dejara ayer"
@@ -41,7 +41,7 @@ Lope,Entre un villano y una Labradora (loa),Loa,ø,0,1,39,VILLANO,,M,quiero ilus
 Lope,Entre un villano y una Labradora (loa),Loa,ø,0,1,40,VILLANO,,M,de pensamientos más altos:
 Lope,Entre un villano y una Labradora (loa),Loa,ø,0,1,41,VILLANO,,M,lo que apenas ver merezco
 Lope,Entre un villano y una Labradora (loa),Loa,ø,0,1,42,VILLANO,,M,temerariamente alabo.
-Lope,Entre un villano y una Labradora (loa),Loa,ø,0,0,-1,ACOTACIÓN,,ø,Sale la labradora.
+Lope,Entre un villano y una Labradora (loa),Loa,ø,0,0,-1,STAGE DIR.,,ø,Sale la labradora.
 Lope,Entre un villano y una Labradora (loa),Loa,ø,0,2,43,LABRADORA,,F,¡alá se tope con él!
 Lope,Entre un villano y una Labradora (loa),Loa,ø,0,2,44,LABRADORA,,F,"¿adónde os quedasteis, Sancho?"
 Lope,Entre un villano y una Labradora (loa),Loa,ø,0,3,45,VILLANO,,M,¡Con buen achaque venís!

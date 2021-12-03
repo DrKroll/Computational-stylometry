@@ -8,15 +8,15 @@ import time                                 # Librerías de control
 from progress.bar import Bar
 import pandas as pd                         # Librerías operativas
 import re
-from libscansion import silabas as slb
+from libscansion import silabas as slbs
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
 start_time = time.time()
-cuentaritmos = {}
+count_rythms = {}
 if len(sys.argv) > 1:
-    entrada = sys.argv[1]
+    input_file = sys.argv[1]
 else:
-    entrada = 'prueba.csv'
+    input_file = 'test.csv'
 
 
 def screen_clear():
@@ -25,119 +25,116 @@ def screen_clear():
     else:
         _ = os.system('cls')
 
-def renuevalista(slb, esp, n):
-    if esp[0] != slb:
-        if slb not in [11, 7]:
-            if slb != 8:
-                esp = [x for x in esp if x != slb]
-                esp.insert(3, slb)
+def refresh_list(syllables, expected, n):
+    if expected[0] != syllables:
+        if syllables not in [11, 7]:
+            if syllables != 8:
+                expected = [x for x in expected if x != syllables]
+                expected.insert(3, syllables)
             else:
-                esp = [8, 11, 8, 11, 8, 7, 6, 10, 12, 5, 9, 14, 4, 13, 3, 15, 2, 3, 4, 1]
+                expected = [8, 11, 7, 6, 10, 12, 5, 9, 14, 4, 13, 3, 15, 4]
         else:
-            silva = [slb] + [s for s in [11, 7] if s != slb]
-            esp = silva + [s for s in esp if s not in [11, 7]]
+            sylva = [syllables] + [s for s in [11, 7] if s != syllables]
+            expected = sylva + [s for s in expected if s not in [11, 7]]
         n += 1
-    return (esp, n)
+    return (expected, n)
 
 
-def entradadf(indice, texto, p, esperadas, cuentaritmos = {}):
-    df.at[indice, 'Personaje'] = p
-    if texto == texto:
-        tex = re.sub(r'\s{2,}', ' ', texto.strip())
-        recuento = slb(texto, esperadas, cuentaritmos)
-        nuclei = ''.join(recuento.nucleosilabico)
-        sil = int(recuento.ml)
-        rim = recuento.rima
-        ason = recuento.ason
-        rit = recuento.ritmo
-        if '[' in texto:
+def update_dataframe(idx, text, p, expected, count_rythms = {}):
+    df.at[idx, 'Character'] = p
+    if text == text:
+        tex = re.sub(r'\s{2,}', ' ', text.strip())
+        grandtotal = slbs(text, expected, count_rythms)
+        nuclei = ''.join(grandtotal.nucleosilabico)
+        syl = int(grandtotal.ml)
+        rim = grandtotal.rima
+        aso = grandtotal.ason
+        rhy = grandtotal.ritmo
+        if '[' in text:
             amb = 3
         else:
-            amb = recuento.ambiguo
+            amb = grandtotal.ambiguo
     else:
         tex = 'X'
-        sil = esperadas[0]
+        syl = expected[0]
         rim = 'X'
-        rit = 'X'
-        ason = 'X'
+        rhy = 'X'
+        aso = 'X'
         amb = 1
-    df.at[indice, 'Texto'] = tex
-    df.at[indice, 'Slbs'] = sil
-    df.at[indice, 'Ambiguo'] = amb
-    df.at[indice, 'NuclVoc'] = nuclei
-    df.at[indice, 'Rima'] = ason
-    df.at[indice, 'Consonancia'] = rim.lower()
-    df.at[indice, 'Ritmo'] = rit
+    df.at[idx, 'Text'] = tex
+    df.at[idx, 'Syllables'] = syl
+    df.at[idx, 'Ambiguous'] = amb
+    df.at[idx, 'Nuclei'] = nuclei
+    df.at[idx, 'Assonance'] = aso
+    df.at[idx, 'Consonance'] = rim.lower()
+    df.at[idx, 'Rtyhtm'] = rhy
 
-    cuentaritmos = diccionario_ritmos(sil, rit, cuentaritmos)
+    count_rythms = rhythms_dictionary(syl, rhy, count_rythms)
 
 
-def diccionario_ritmos(slbs, ritmo, diccionario):
-    if slbs not in diccionario.keys():
-        diccionario[slbs] = {ritmo: 1}
-    elif ritmo not in diccionario[slbs].keys():
-        diccionario[slbs][ritmo] = 1
+def rhythms_dictionary(slb, rhy, dic):
+    if slb not in dic.keys():
+        dic[slb] = {rhy: 1}
+    elif rhy not in dic[slb].keys():
+        dic[slb][rhy] = 1
     else:
-        diccionario[slbs][ritmo] += 1
-    return diccionario
+        dic[slb][rhy] += 1
+    return dic
 
 
-def guarda(dataframe, nombre):
-    dataframe['Slbs'] = dataframe['Slbs']
-    dataframe['Ambiguo'] = dataframe['Ambiguo']
-    dataframe = dataframe.drop_duplicates(subset=['Verso'], keep='last').convert_dtypes()
-    dataframe.to_csv(f'{nombre}.out', mode='w', header=True, index=False)
+def store(dataframe, name):
+    dataframe['Syllables'] = dataframe['Syllables']
+    dataframe['Ambiguous'] = dataframe['Ambiguous']
+    dataframe = dataframe.drop_duplicates(subset=['Verse'],
+                                          keep='last').convert_dtypes()
+    dataframe.to_csv(f'{name}.out', mode='w', header=True, index=False)
 
 
-start_time = time.time()                    # Inicia el cronómetro
-if len(sys.argv) > 1:                       # Decide qué archivo lee
-    entrada = sys.argv[1]
-else:
-    entrada = 'prueba.csv'
+start_time = time.time()                    # Start counting time
+df = pd.read_csv(input_file)
+df['Act'] = df['Act']                       # real to int
+df['Speech'] = df['Speech']
+df['Verse'] = df['Verse']
+basename = input_file.rsplit('.', 1)[0]
+previous = character = parlamento = previous = ''
+i = last_row = previous_verse = 0
 
-df = pd.read_csv(entrada)                   # Lee el archivo de entrada
-df['Jornada'] = df['Jornada']   # Convierte columna de real a int
-df['Parlamento'] = df['Parlamento']
-df['Verso'] = df['Verso']
-nombrebase = entrada.rsplit('.', 1)[0]
+bar = Bar('Processed:', max=len(df.index))
+title = df.iloc[0]['Title']
+values = ([8, 11, 7, 6, 10, 12, 5, 9, 14, 4, 13, 3, 15, 2], 0)
 
-anterior = personaje = parlamento = anterior = ''
-i = ultima_fila = verso_anterior = 0
-bar = Bar('Procesado:', max=len(df.index))
-pieza = df.iloc[0]['Pieza']
-valores = ([8, 11, 7, 6, 10, 12, 5, 9, 14, 4, 13, 3, 15, 2], 0)
-
-for index, fila in df.iterrows():
-    if pieza != fila['Pieza']:
-        guarda(df[df['Pieza'] == pieza], pieza)
-        pieza = fila['Pieza']
+for idx, row in df.iterrows():
+    if title != row['Title']:
+        store(df[df['Title'] == title], title)
+        title = row['Title']
     screen_clear()
-    print(f'\nObra:\t\t{fila["Pieza"]}\nJornada:\t{fila["Jornada"]}\n'\
-          f'Texto:\t\t{fila["Texto"]}\n')
+    print(f'\nTitle:\t\t{row["Title"]}\nAct:\t{row["Act"]}\n'\
+          f'Text:\t\t{row["Text"]}\n')
     bar.next()
-    fila = fila.copy()
-    if fila['Verso'] > 0:
-        if fila['Verso'] > verso_anterior or fila['Parlamento'] == 1:
-            vers = fila['Texto']
-            pant = fila['Personaje']
-            anterior = vers
-            verso_anterior = fila['Verso']
-            entradadf(index, vers, fila['Personaje'], valores[0], cuentaritmos)
-            if index == df.index[-1] or fila['Verso'] < df.at[index+1, 'Verso']:
-                valores = renuevalista(int(df.at[index, 'Slbs']),
-                                       valores[0],
-                                       valores[1])
-            esperadas = valores[0]
-            cuenta = valores[1]
+    row = row.copy()
+    if row['Verse'] > 0:
+        if row['Verse'] > previous_verse or row['Speech'] == 1:
+            vers = row['Text']
+            previous_character = row['Character']
+            previous = vers
+            previous_verse = row['Verse']
+            update_dataframe(idx, vers, row['Character'], values[0],
+                             count_rythms)
+            if idx == df.index[-1] or row['Verse'] < df.at[idx+1, 'Verse']:
+                values = refresh_list(int(df.at[idx, 'Syllables']),
+                                       values[0],
+                                       values[1])
+            expected = values[0]
+            count = values[1]
         else:
-            vers = f'{anterior} {fila["Texto"]}'
-            personaje = f'{pant} y {fila["Personaje"]}'
-            pant = personaje
-            anterior = vers
-            entradadf(index, vers, personaje, valores[0])
-        ultima_fila = index
+            vers = f'{previous} {row["Text"]}'
+            character = f'{previous_character} y {row["Character"]}'
+            previous_character = character
+            previous = vers
+            update_dataframe(idx, vers, character, values[0])
+        last_row = idx
     else:
-        df = df.drop(index)
+        df = df.drop(idx)
 bar.finish()
-guarda(df[df['Pieza'] == pieza], pieza)
-print(f'El programa se ejecutó en {time.time() - start_time} segundos')
+store(df[df['Title'] == title], title)
+print(f'The programme finished in {time.time() - start_time} seconds')
