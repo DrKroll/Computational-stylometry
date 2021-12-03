@@ -7,11 +7,10 @@ from os import environ
 
 
 
-# resources_dir = '/usr/local/lib/python3.9/dist-packages/stanza/resources'
+resources_dir = '/usr/local/lib/python3.9/dist-packages/stanza/resources'
 processor_dict = {'tokenize': 'ancora', 'pos': 'ancora',
                   'ner': 'ancora', 'depparse': 'ancora'}
-config = {'lang':  'es', 'processors': processor_dict}
-#          , 'dir': resources_dir}
+config = {'lang':  'es', 'processors': processor_dict, 'dir': resources_dir}
 nlp = stanza.Pipeline(**config)
 
 habituales = ['juez', 'cruel', 'fiel']
