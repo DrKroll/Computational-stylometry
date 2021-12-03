@@ -1,0 +1,218 @@
+<t>Entre un villano y una Labradora (loa)
+<a>Lope
+<g>Loa
+VILLANO
+	¡Que siempre en los grandes días
+	sucedan casos extraños!
+	¡oh, nunca dejara ayer
+	la paz de mi humilde campo!
+	bien sé que siempre se pierde
+	a los que van caminando
+	de la ropa o del vestido
+	por descuido por cuidado.
+	Cuando en tan gran confusión
+	perdiera no era milagro
+	las alforjas o el capote
+	ni aun el jumento entre tantos,
+	¡mas que se me haya perdido
+	mi mujer! ¡extraño caso!
+	Solo en Madrid se perdiera
+	una mujer de veinte años.
+	ahora bien ¿qué puedo hacer
+	si la busco y no la hallo?
+	Cumpliré con mi conciencia
+	con tres pregones o cuatro,
+	pero si lo miro bien
+	que se pierda no me espanto
+	mirando tanta grandeza,
+	tanta variedad mirando,
+	que oigo decir que es hermosa
+	más que por sí por lo vario
+	la madre naturaleza,
+	pues, ¿por qué la estoy culpando?
+	¡oh generoso instrumento
+	de varias cuerdas templado
+	donde sirve de alma un rey
+	con su poderosa mano,
+	en quien tan sabios ministros
+	sobre su dorado lazo
+	son cuerdas en que consiste
+	la vida de sus vasallos,
+	quién supiera engrandecerte!
+	Mas como rudo villano
+	quiero ilustrar mi bajeza
+	de pensamientos más altos:
+	lo que apenas ver merezco
+	temerariamente alabo.
+<i>Sale la labradora.
+LABRADORA
+	¡alá se tope con él!
+	¿adónde os quedasteis, Sancho?
+VILLANO
+	¡Con buen achaque venís!
+	¿no os dije que de mi lado
+	no os apartásedes?
+LABRADORA
+		vos
+	tuvistes la culpa cuando
+	me dejastes, porque en fin
+	estábades obligado
+	por cortesía o por fuerza
+	y aun temor a no apartaros
+	solo un instante de mí.
+VILLANO
+	ya estaba determinado
+	a pregonaros, ¿qué habéis
+	hecho?
+LABRADORA
+		a la fe, no he dejado
+	cosa que no le haya visto.
+	en mueso puebro colgamos
+	árboles, redes y ﬂores
+	y aquí telas y brocados.
+	¡Qué calles tan bien vestidas!
+VILLANO
+	Por ventura entre esos ramos
+	hay más almas que en las telas.
+LABRADORA
+	Luego me fui paso a paso
+	donde dicen que salía
+	la procesión, y esperando
+	veo venir la tarasca
+	perseguida de muchachos
+	que diz que no es cosa viva
+	son que unos hombres debajo
+	la llevan por donde quieren.
+VILLANO
+	ansí va el mundo rodando,
+	porque como ella sombreros
+	se traga el tiempo los años.
+LABRADORA
+	Lugo vi, Sancho, unos niños
+	en camisa y coronados
+	de ﬂores y esto aprendí
+	que entonces iban cantando:
+	Pascual ¿no me dirés vos
+	aquello branco qué sea,
+	que a mí me parece oblea
+	y diz el cura que es Dios?
+VILLANO
+	Mira, teresa, ese pan
+	le mira el entendimiento
+	con los ojos de la fe.
+LABRADORA
+	ya sé que es dios, porque luego
+	que el sacerdote lo dice
+	las palabras, aunque veo
+	pan no es pan, que es dios.
+VILLANO
+		en fin,
+	¿qué viste más?
+LABRADORA
+		Prosiguiendo
+	la procesión los gigantes
+	con dos cabezas salieron
+	por cima de los pendones.
+	una vez me fui tras ellos
+	y adonde se vende el vino
+	pararon, que el tabernero,
+	david diz que se llamaba,
+	y en viéndole se cayeron.
+	tras los pendones y cruces
+	las sacras órdenes veo
+	y después la clerecía
+	y en colando de los cregos;
+	con los carrillos hinchados
+	soprando unos hombres veo,
+	pescuezos como de ganso
+	que diz que eran estromentos.
+	Con ellos vieras también
+	unos barbados de prieto
+	y otros sin pelo de barba
+	mosicando el tanto negro,
+	que parecían angeles,
+	pero lo que vi tras ellos
+	¿quién te lo podrá decir?
+VILLANO
+	Son, teresa, los Consejos,
+	los sagrados senadores
+	y los cónsules supremos
+	de dos mundos de Felipe.
+LABRADORA
+	Los mundos no iban con ellos,
+	mas bien se echaba de ver
+	que eran sus almas y dueños.
+	Luego debajo de un palio
+	cuyas varas me dijeron
+	traía el corregidor
+	y el ilustre ayuntamiento
+	venía en un edificio
+	de oro y plata, descubierto
+	en hombros de sacerdotes
+	el pan que bajó del cielo,
+	y después de los que habían
+	dicho la misa un mancebo
+	que dijeron que era el rey
+	con otro a su lado izquierdo
+	que llamaban el enfante
+	y dije, aunque habrando quedo:
+	«después de haber visto a dios
+	no hay más que ver que a los dos».
+VILLANO
+	¿no viste luego también
+	la venerable presencia
+	del ilustre presidente
+	cuyas virtudes y letras
+	son de esta máquina polos
+	que con tal celo gobierna,
+	y el ilustrísimo nuncio
+	del gran pastor de la iglesia
+	con los tres embajadores,
+	Francia, alemania y venecia?
+LABRADORA
+	todo lo vi, pero fue
+	tanta la gente y la priesa
+	que nos daban unas lanzas
+	con unos picos en ellas
+	que fue milagro librarme.
+VILLANO
+	Menos tu peligro fuera
+	a estar mirando conmigo
+	la serenísima reina
+	doña isabel de borbón
+	y un vivo clavel con ella
+	del príncipe baltasar.
+	Pues las damas ¡no dijeras
+	sino que a la tierra el cielo
+	trasladaba sus estrellas!
+	en esta atención que digo
+	oigo unos hombres de letras
+	que trataban de los autos.
+LABRADORA
+	¿y qué son autos?
+VILLANO
+		Comedias
+	a honor y gloria del pan
+	que tan devota celebra
+	esta coronada villa
+	porque su alabanza sea
+	confusión de la herejía
+	y gloria de la fe nuestra,
+	todos de historias divinas;
+	y luego dijeron que era
+	de cuatro ingenios lo escrito,
+	de dos autores la fiesta.
+	es El nombre de Jesús
+	uno de los tres. Pues llegas
+	a tiempo que puedas verle
+	vamos a verle, teresa.
+	Pero no te has de perder.
+LABRADORA
+	vamos, y pues cielo y tierra
+	al sacro nombre se humilla
+	y el mismo infierno le tiembla,
+	quítate la caperuza
+	y al uso de nuestra aldea
+	harele yo la mesura
+	y tú le harás reverencia.
+
