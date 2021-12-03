@@ -3,9 +3,15 @@ version = '0.1.1beta1'
 import re
 import stanza
 from fonemas import transcribe
+from os import environ
+
+
+
+# resources_dir = '/usr/local/lib/python3.9/dist-packages/stanza/resources'
 processor_dict = {'tokenize': 'ancora', 'pos': 'ancora',
                   'ner': 'ancora', 'depparse': 'ancora'}
 config = {'lang':  'es', 'processors': processor_dict}
+#          , 'dir': resources_dir}
 nlp = stanza.Pipeline(**config)
 
 habituales = ['juez', 'cruel', 'fiel']
@@ -266,7 +272,6 @@ class silabas:
         return preferencia
 
     def __busca_sinalefas(self, palabras):
-        print(f'\nPalabras\t {palabras}')
         vocales = 'aeioujwiAEIOU'
         semivocales = 'wjàèò'
         # str.maketrans(semivocales, 'iu'))
@@ -299,7 +304,6 @@ class silabas:
                     segunda = silaba
                     primera = palabra[j-1]
                     if all(x in vocales for x in [primera[-1], segunda[0]]):
-                        print(f' Si {primera} {segunda} {posicion}')
                         if primera[-1] == segunda[0]:
                             preferencia = 4
                         sinalefas.append((posicion,
@@ -308,7 +312,6 @@ class silabas:
                                             preferencia -2))
 
         sinalefas = sorted(sinalefas, key=lambda tup: (-tup[1], tup[0]))
-        print(f'\nSinalefas {sinalefas}')
         return [silaba[0] for silaba in sinalefas]
 
     @staticmethod
@@ -412,7 +415,6 @@ class silabas:
 
     @staticmethod
     def __busca_hiatos(palabras):
-        print(f'\nPalabras:\t{palabras}')
         triptongos = []
         diptongos = []
         for idx, palabra in enumerate(palabras):
@@ -427,7 +429,6 @@ class silabas:
         return diptongos + triptongos
 
     def __hiato(self, palabras, hiatos, diferencia):
-        print(f'Hiatos\t{palabras} {hiatos}')
         preferencia = []
         sem2voc = {'j': 'i', 'w': 'u'}
         for idx in hiatos[::-1]:
@@ -467,7 +468,6 @@ class silabas:
 #                    if diptongo:
 #                        hiato = [uno,
 #                                 dos.replace(dos[0], sem2voc[dos[0]])]
-            print(f'{palabras}')
             #palabras[idx] = palabra
         return palabras
 
@@ -492,7 +492,6 @@ class silabas:
                 ajustadas = self.__ajusta_silabas(ajustadas,
                                                   sinalefas_potenciales)
             else:
-                print(f'ELSE {offset}')
                 if lon_rima not in [1, 2, 3, 4, 5, 9]:
                     ajustadas = self.__hiato(ajustadas, hiatos_potenciales, offset)
         lon_rima = sum([len(palabra) for palabra in ajustadas]) + rima['suma']
