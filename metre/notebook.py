@@ -13,23 +13,24 @@ from re import sub
 # Let's make a list of it
 text = 'Sueña el rico en su riqueza,'.split()
 
-text
+print(text)
 
 # Hyphenation (orthographic spelling)
 silabea('Sueña')
 
 syllables = []
 [syllables.append(silabea(word)) for word in text]
-syllables
+print(syllables)
 
 # Phonological transcription (almost)
-transcribe('Sueña')
+transcription = transcribe('Sueña')
+print(transcription)
 
 phonemes = []
 [phonemes.append(
     transcribe(sub(r'[^\w\s]','',word)))
                for word in text]
-phonemes
+print(phonemes)
 
 for word in text:
     print(word)
@@ -112,48 +113,47 @@ def samples(data, authors, nsamples):
         g = data.loc[data['Author'] == i].groupby('Title')
         a = np.arange(g.ngroups)
         np.random.shuffle(a)
-        sample = sample.append(data.loc[df['Author']
-                                        == i][g.ngroup().isin(a[:nsamples])])
+        sample = sample.append(
+            data.loc[df['Author'] == i][g.ngroup().isin(a[:nsamples])])
     return sample
 
-def recount(data, columna):
-    dfritmo = pd.DataFrame()
-    valores = pd.unique(data[columna])
-    obras = pd.unique(data['Title'])
-    for obra in obras:
-        nversos = len(data[data['Title'] == obra])
-        cuentas = {}
-        autor =  data.loc[data['Title'] == obra][
+def recount(data, column):
+    rhythmdf = pd.DataFrame()
+    values = pd.unique(data[column])
+    titles = pd.unique(data['Title'])
+    for title in titles:
+        nverses = len(data[data['Title'] == title])
+        counts = {}
+        author =  data.loc[data['Title'] == title][
             'Author'].value_counts()[:1].index.tolist()[0]
-        for valor in valores:
-            fila = {'Title': obra, 'Author': autor}
-            cuenta = len(data.loc[data['Title'] == obra][data[columna]
-                                                         == valor])
-            relcuenta = cuenta/nversos
-            fila = {'Title': obra, 'Author': autor, columna: valor,
-                    'Count': cuenta, 'RelCount' : relcuenta}
-            if cuenta > 0:           
-                dfritmo = dfritmo.append(fila, ignore_index=True)
-    return dfritmo.convert_dtypes()
+        for value in values:
+            row = {'Title': title, 'Author': author}
+            count = len(data.loc[data['Title'] == title][data[column] == value])
+            relcount = count/nverses
+            row = {'Title': title, 'Author': author, column: value,
+                   'Count': count, 'RelCount' : relcount}
+            if count > 0:
+                rhythmdf = rhythmdf.append(row, ignore_index=True)
+    return rhythmdf.convert_dtypes()
 
-def longformat(data, columna, cuenta='Count'):
-    dflargo = pd.DataFrame()
-    obras = pd.unique(data['Title'])
-    variables = pd.unique(data[columna])
+def longformat(data, column, count='Count'):
+    longdf = pd.DataFrame()
+    titles = pd.unique(data['Title'])
+    values = pd.unique(data[column])
     calderon = lope = mira = 0
-    for obra in obras:
-        subconjunto = data[data['Title'] == obra]
-        autor = max(subconjunto['Author'])
-        fila = {'Author': autor, 'Title': obra}
-        for var in variables:
-            suma = subconjunto[subconjunto[columna] == var]['Count'].sum()
-            fila.update({var: suma})
-        dflargo = dflargo.append(fila, ignore_index=True)
-    return dflargo.convert_dtypes()
+    for title in titles:
+        subset = data[data['Title'] == title]
+        author = max(subset['Author'])
+        row = {'Author': author, 'Title': title}
+        for var in values:
+            suma = subset[subset[column] == var]['Count'].sum()
+            row.update({var: suma})
+        longdf = longdf.append(row, ignore_index=True)
+    return longdf.convert_dtypes()
 
-def min_freq(data, columna, minimo):
-    return data.groupby(columna).filter(lambda x : (
-        x[columna].count()>=minimo).any()).convert_dtypes()
+def min_freq(data, column, minimum):
+    return data.groupby(column).filter(
+        lambda x : (x[column].count()>=minimum).any()).convert_dtypes()
 
 #5. STATISTIC FUNCTIONS
 
@@ -161,7 +161,7 @@ def analyse(data, j_test=pd.DataFrame(), analisis='k', test=0.2, alea = 42,
             plot='rbf', n=3):
     X = data.drop('Author', axis=1).values
     y = data['Author'].values
-    
+
     from sklearn.model_selection import train_test_split
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test,
                                                         random_state=alea)
@@ -169,7 +169,7 @@ def analyse(data, j_test=pd.DataFrame(), analisis='k', test=0.2, alea = 42,
         from sklearn.neighbors import KNeighborsClassifier
         neighbors = np.arange(1,12)
         train_accuracy =np.empty(len(neighbors))
-        test_accuracy = np.empty(len(neighbors))    
+        test_accuracy = np.empty(len(neighbors))
         for i,k in enumerate(neighbors):
             modelo = KNeighborsClassifier(n_neighbors=k)
             modelo.fit(X_train,y_train)
@@ -193,7 +193,7 @@ def analyse(data, j_test=pd.DataFrame(), analisis='k', test=0.2, alea = 42,
         sc = StandardScaler()
         X_train = sc.fit_transform(X_train)
         X_test = sc.transform(X_test)
-    
+
         j_test = sc.transform(j_test)
         from sklearn.linear_model import LogisticRegression
         modelo = LogisticRegression(max_iter=1000,  random_state=alea)
@@ -244,7 +244,7 @@ candidatesdf = df[df['Author'] != disputed]
 # Disputed
 disputeddf = df.loc[df['Author'] == disputed]
 
-# I don't want very unusual hythms 
+# I don't want very unusual hythms
 df = min_freq(df, 'Rhythm',  100)
 
 disputeddf = df.loc[df['Author'] == disputed]
@@ -266,11 +266,11 @@ plt.xticks(rotation=45)
 plot = sns.boxplot(x='Rhythm', y='Count', hue='Author', data=dfcandidatescount,
                    medianprops=dict(color="white", alpha=0.7))
 
-# Long format (Eacxh rhtyhm is a column)
+# Long format (Each rhtyhm is a column)
 dflong = longformat(dfcount, 'Rhythm', 'Count')
 dfcandidateslong = longformat(dfcandidatescount, 'Rhythm', 'Count')
 
-# Scatterplot (dots) --+---+-
+# Scatterplot (dots)-
 plt.xticks(rotation=45)
 plot = sns.scatterplot(data=dfcandidateslong, x='oXooXoXo', y='ooXoooXo',
                        hue="Author")
@@ -281,7 +281,7 @@ plot = sns.scatterplot(data=dfcandidateslong, x='oXooXoXo', y='ooXoooXo',
 testr = 0.01
 testk = 0.2
 tests = 0.01
-# Randomisation factor (the answer to life, the universe and everything)
+# Randomisation factor (the answer to life, the universe, and everything)
 alea = 42
 # Number of neighbours
 kn = 4
@@ -290,18 +290,18 @@ data = dflong.drop('Title', axis=1)
 
 
 #tabla, j_test=pd.DataFrame(), test=0.2, alea = 42, plot='n', analisis='k', n=12
-print('\n\n\n******************************************\n\Title:\tX:'\
+print('\n\n\n******************************************\n\Title:\tX: '\
       f'{dflong.loc[dflong["Author"] == "X"]["Title"].max()}\n')
 trainer = data.loc[data['Author'].isin(candidates)]
 to_test = data.loc[data['Author'] == 'X'].drop('Author', axis=1).values
-    
+
 print('Regresion')
 analyse(trainer, to_test, 'r', testr, alea,'n', 3)
-  
+
 print('\n-------------------------------------------------------\n\nSVN')
 #testY = dfreglargo[dfreglargo['Autor'] == autor].drop('Autor', axis=1).values
 analyse(trainer, to_test,  's', tests, alea, 'rbf')
-    
+
 print('\n-------------------------------------------------------\n\nKnn:\n')
 analyse(trainer, to_test,  'k', testk, alea, 'y', kn)
 
