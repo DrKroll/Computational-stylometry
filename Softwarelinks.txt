@@ -1,30 +1,25 @@
-Computational stylometry
-Counting words and rhythms using R and Python
+Humanidades digitales, R y Python
 
-Simon Kroll (University of Vienna)
-Fernando Sanz Lázaro (University of Vienna)
+Simon Kroll (Universidad de Viena)
 
 
-What will you need to follow the course?
+¿Qué necesitaréis para poder seguir el curso?
 
-1. Rstudio & R (please install the package stylo)
+1. Rstudio & R (es necesario instalar el paquete stylo)
 	https://www.rstudio.com
 	https://www.r-project.org/about.html
-	Please read the following instructions carefully, depending on your operating system you will need to install some libraries: https://cran.r-project.org/web/packages/nat/vignettes/Installation.html
+	Dependiendo de vuestro sistema operativo es posible que tengáis que instalar programas de entorno. Aquí podéis encontrar las descripciones detalladas: https://cran.r-project.org/web/packages/nat/vignettes/Installation.html
 
 
-2. Python (please install the following libraries: seaborn, matplotlib, numpy, statsmodel, pandas, progress, fonemas, silabeador)
+2. Python (favor de instalar las siguientes librerías: seaborn, matplotlib, numpy, statsmodel, pandas, progress, fonemas, silabeador)
 	https://www.python.org
-	To install fonemas and silabeador either use pip or download them from the following github repositories in your working directory: https://github.com/fsanzl/fonemas; https://github.com/fsanzl/silabeador)
+
+Python ofrece un programa que ayuda en la instalación de librerías. Se llama "pip":
+https://pypi.org/project/pip/
+
+	Para instalar fonemas y silabeador podéis usar el pip o descargarlos de los siguientes repositorios github repositories: https://github.com/fsanzl/fonemas; https://github.com/fsanzl/silabeador)
 
 
-3. Jupyter
-Please feel free to use either Jupyter Notebook or Jupyter Lab. We recommend to use this IDE to follow the different code examples in detail, but you might as well use your usual development environment.
-	https://jupyter.org
 
-
-Please don't hesitate to contact us if you have any problems installing the software.
-
-Contact:
+Contacto:
 simon.kroll@univie.ac.at
-fernando.sanz-lazaro@univie.ac.at

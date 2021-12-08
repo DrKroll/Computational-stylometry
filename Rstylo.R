@@ -1,11 +1,12 @@
 
+
 library(stylo)
 
-setwd("/Users/simonkroll/Computational-stylometry/R_actores/")
+setwd("/Users/simonkroll/Computational-stylometry/R_genero/")
 stylo()
 
 
-setwd("/Users/simonkroll/rollingc")
+setwd("/Users/simonkroll/Computational-stylometry/rollingc/")
 
 
 # A continuación, llamamos al paquete stylo

@@ -1,0 +1,129 @@
+#!/usr/bin/env python3
+import sys
+import re
+import os
+import pandas as pd
+
+jornada = parlamento = verso = 0
+v = [0, 0]
+paux = [0, 0]
+p = ''
+autor = titulo = genero = subgenero = sexo = s ='ø'
+
+personaje = 'ACOTACIÓN'
+rtag = re.compile(r'^\s*<(.)>')
+rtext = re.compile(r'<.>(.*)$')
+df = pd.DataFrame(columns=['Autor',
+                           'Pieza',
+                           'Gen',
+                           'Subg',
+                           'Jornada',
+                           'Parlamento',
+                           'Verso',
+                           'Personaje',
+                           'Tipo',
+                           'Sexo',
+                           'Texto'])
+lista_nombres = {}
+
+
+def sexa(nombre):
+    nombre = re.sub(r'(.*)\d.*', '\1', nombre).strip()
+    if nombre in lista_nombres:
+        return lista_nombres[nombre]
+    else:
+        if nombre.endswith('A') or (nombre.endswith('AS') or
+                                    nombre.endswith('ᵃ') or
+                                    nombre.endswith('ª') or
+                                    nombre.startswith('DOÑA ')):
+            sx = 'F'
+        elif (nombre.endswith('O') or nombre.endswith('OS') or
+              nombre.endswith('°') or nombre.endswith('º') or
+              nombre.startswith('DON ')):
+            sx = 'M'
+        else:
+            sx = 'X'
+    lista_nombres[nombre] = sx
+    return lista_nombres[nombre]
+
+
+with open(sys.argv[1], 'r', encoding='utf-8') as f:
+    linea = {'Autor': '', 'Pieza': '', 'Gen': '', 'Subg': '', 'Jornada': 0,
+             'Parlamento': 0, 'Verso': 0, 'Personaje': '', 'Sexo': '',
+             'Tipo': '', 'Texto': ''}
+    for line in f.readlines():
+        flag = 1
+        if rtag.match(line):
+            tipo = rtag.search(line).group(1)
+            texto = rtext.search(line).group(1)
+            if tipo.lower() == 'j':
+                jornada += 1
+                flag = 0
+            elif tipo.lower() == 't':
+                titulo = texto.strip()
+                flag = 0
+            elif tipo.lower() == 'a':
+                autor = texto.strip()
+                flag = 0
+            elif tipo.lower() == 'g':
+                genero = texto.strip()
+                flag = 0
+            elif tipo.lower() == 's':
+                subgenero = texto.strip()
+                flag = 0
+            elif tipo.lower() == 'i':
+                v[1] -= 1
+                verso = v[1]
+                if line.startswith('\t'):
+                    personaje = 'ACOTACIÓN interna'
+                else:
+                    personaje = 'ACOTACIÓN'
+                    parlamento = paux[1]
+                sexo = 'ø'
+            elif tipo.lower() in ('p', 'e'):
+                verso = 0
+                personaje = p
+                sexo = s
+                texto = str(line).strip()
+            else:
+                verso = 0
+                #personaje = p
+                #sexo = s
+                flag = 0
+        else:
+            if re.match(r'^\s*$', line):
+                flag = 0
+            elif not re.match(r'^\t+', line):
+                print(parlamento, paux, paux[0], line)
+                p = line.strip().upper()
+                paux[0] += 1
+                s = sexa(p)
+                flag = 0
+            elif re.match(r'^\t\S', line):
+                v[0] += 1
+                verso = v[0]
+                personaje = p
+                sexo = s
+            else:
+                verso = v[0]
+                personaje = p
+                sexo = s
+            parlamento = paux[0]
+            texto = str(line).strip()
+        nuevalinea = {'Autor': autor, 'Pieza': titulo, 'Gen': genero,
+                      'Subg': subgenero, 'Jornada': jornada,
+                      'Parlamento': parlamento, 'Verso': verso,
+                      'Personaje': personaje, 'Sexo': sexo, 'Tipo': '',
+                      'Texto': texto}
+        if linea['Verso'] == nuevalinea['Verso']:
+            nuevalinea['Personaje'] == f'{linea["Personaje"]} y' \
+                f'{nuevalinea["Personaje"]}'
+            nuevalinea['Texto'] == f'{linea["Texto"]} {nuevalinea["Texto"]}'
+            if nuevalinea['Sexo'] != linea['Sexo']:
+                nuevalinea['Sexo'] = f'{linea["Sexo"]}{nuevalinea["Sexo"]}'
+        linea = nuevalinea
+        if flag == 1:
+            print(linea)
+            df = df.append(linea, ignore_index=True)
+
+df.to_csv(f'{os.path.splitext(sys.argv[1])[0]}.csv', index=False)

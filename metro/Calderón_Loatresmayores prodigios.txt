@@ -1,0 +1,661 @@
+<a>Calderón
+<t>Loa para la comedia de Los tres mayores prodigios
+<g>Loa
+<o>Edición digital a partir de la edición de Santiago Fernández Mosquera, Segunda parte de Comedias, II, Madrid, Biblioteca Castro, 2007, pp. 989-1125.
+<f>1636
+<el>PALES:ninfa::f*JASÓN:::m*FLORA:ninfa::f*TESEO:::m*LA NOCHE:::f*HÉRCULES:::m*
+<i>Ha de haber tres teatros divididos el uno y los otros. En el de mano derecha sale Pales, ninfa. En el de mano izquierda sale Flora, ninfa, dejando desocupado el de en medio.
+PALES
+	Noche hermosa que con solo
+	un lucero resplandeces
+	más que el día con el sol...
+FLORA
+	Noche apacible y alegre,
+	luciente honor del ocaso,
+	noble injuria del oriente...
+PALES
+	...a cuyos soplos süaves...
+FLORA
+	...a cuyos suspiros leves...
+PALES
+	...rejuvenecen los montes.
+FLORA
+	...los valles rejuvenecen.
+PALES
+	Tú, que eres alba nocturna
+FLORA
+	Tú, que oscura aurora eres
+PALES
+	...pues alumbras con las sombras.
+FLORA
+	...pues sin el sol amaneces.
+PALES
+	Tú, a quien aquesta alquería...
+FLORA
+	Tú, a quien este campo fértil...
+PALES
+	...hoy toca solemnizar...
+FLORA
+	...hoy celebrar pertenece...
+PALES
+	...escucha mis dulces voces...
+FLORA
+	...a mis acentos atiende...
+PALES
+	...por amorosos...
+FLORA
+		...por tiernos...
+PALES
+	...por amantes.
+FLORA
+		...por corteses.
+<i>En el tablado de en medio por lo alto de él sale la noche.
+NOCHE
+	¿Qué quieres, hermosa Pales?
+	Hermosa Flora, ¿qué quieres?
+	Que a las voces de las dos
+	salgo, dejando mi albergue,
+	donde de cuantas deidades
+	estos jardines contienen
+	asistida estaba, dando
+	a la luna de mi frente
+	bellas guirnaldas de flores,
+	porque en mí más resplandecen
+	que los luceros y estrellas
+	las rosas y los claveles.
+PALES
+	Yo que te llamé primero
+	es bien que primero llegue
+	a informarte de un enojo
+	que a darte voces se atreve.
+	Pales soy, deidad a cuyo
+	rústico estudio concede
+	Júpiter el patrocinio;
+	amparo y favor silvestre
+	de todas las alquerías,
+	quintas, casas de placeres
+	y apartadas poblaciones,
+	que de la campaña fértil
+	son adorno; cuanto es
+	retiro a mí me compete,
+	que bucólica Talía
+	canta en mí rústicamente.
+	Viendo que es casa de campo,
+	aunque es palacio eminente,
+	esta fábrica y que a mí
+	sus festejos pertenecen;
+	viendo hoy en su hermosa esfera,
+	para tantos soles breve
+	a pesar de su estación,
+	la majestad de mis reyes,
+	corrida vengo a buscarte
+	por ver cuán poco te debe
+	esta dicha, que no has hecho
+	prevenciones excelentes
+	con que su vista saludes,
+	con que su deidad festejes,
+	con que tu ventura aplaudas
+	y su venida celebres.
+FLORA
+	Yo, que soy Flora, a quien toca
+	el hermoso imperio alegre
+	de estanques y de jardines,
+	patria de flores y fuentes;
+	yo, cuya cultura el cielo
+	mismo envidió tantas veces
+	cuantas mis varios dibujos
+	siempre en laberintos verdes
+	excedieron los azules
+	suyos, siendo al oponerse
+	el jardín un verde cielo
+	y el cielo un jardín celeste,
+	con el mismo intento vine
+	a reñirte dignamente
+	el poco cuidado, pues
+	fiesta ninguna previenes
+	en tu espacio que divierta
+	a quien mis jardines viene
+	a enriquecer de matices
+	y colores diferentes.
+	¿Cómo tú, Noche, en tu noche
+	perezosamente duermes
+	sin que de aqueste cuidado
+	el empeño te despierte?
+	Pues, siendo la más festiva
+	a las más remotas gentes,
+	para la mayor acción
+	la menos festiva eres.
+NOCHE
+	Bella Pales, bella Flora,
+	hermosuras a quien debe
+	la contada edad del año
+	la luz de sus doce meses,
+	no así de mí desconfíes,
+	no así tú de mí te quejes,
+	que no ha sido mi descuido
+	tan grande como os parece,
+	que, aunque humilde fiesta sea
+	–no humilde por quien pretende
+	hacerla, sino por quien
+	con poco ingenio la emprende–,
+	una tengo prevenida
+	que divierta, aunque no alegre
+	mi noche. ¡Oh, quieran los cielos
+	que a salir con ella acierte!
+PALES
+	¿Prevenida hay fiesta?
+NOCHE
+		Sí.
+FLORA
+	¿Y qué fiesta es?
+NOCHE
+		La que siempre:
+	una comedia.
+PALES
+		¿Hala escrito
+	algún ingenio excelente?
+NOCHE
+	No, sino pobre y humilde.
+FLORA
+	Poco importará, si tiene
+	algún teatro que haga
+	evidencia lo aparente.
+NOCHE
+	Tampoco tiene apariencias.
+PALES
+	Pues buena fiesta previenes.
+FLORA
+	Sin ingenio y sin adorno
+	¿no fuera mejor no hacerse?
+NOCHE
+	No tan presto antes de vella
+	a las dos os desconsuele.
+PALES
+	Refiérenos de qué trata.
+FLORA
+	Repítenos qué contiene.
+NOCHE
+	Escuchad, que el argumento
+	os quiero poner presente
+	de toda la fiesta, a ver
+	lo que la fiesta os parece,
+	que esto hizo la Antigüedad
+	en sus fiestas muchas veces.
+	Escuchad, pues, su argumento
+	antes que se represente.
+<i>Salen en el teatro de en medio Jasón y Teseo teniendo a Hércules.
+HÉRCULES
+	Dejadme dar la muerte.
+JASÓN
+	Repara.
+TESEO
+		Considera.
+JASÓN
+		Mira.
+TESEO
+		Advierte.
+HÉRCULES
+	Dejad que mi despecho,
+	en ira, en rabia y en furor deshecho,
+	con los dientes, las manos y los brazos,
+	el corazón sacándome a pedazos,
+	hoy la vida me quite
+	o que al mar desde aquí me precipite,
+	porque a tanta estatura
+	solo el mar es bastante sepultura.
+TESEO
+	Hércules valeroso,
+	tú, que siempre soberbio y animoso
+	con heroicas vitorias
+	tu fama has ilustrado de memorias,
+	¿hablas tan impaciente
+	rendido a ningún trágico acidente?
+JASÓN
+	Tú, que tantas fatigas padeciste
+	con que eternos aplausos conseguiste,
+	cuyo nombre jamás será escondido
+	de las borradas señas del olvido,
+	¿hoy te muestras sin seso
+	rendido a ningún trágico suceso?
+TESEO
+	La muerte quieres darte;
+	no debes, no, sin duda de acordarte
+	que en leyes de valor y bizarría
+	la desesperación no es valentía,
+	pues la mayor, más grande y la más fuerte
+	es esperar, mas no buscar la muerte.
+JASÓN
+	Si tú a tu misma rabia te condenas,
+	aqueso es permitirles a las penas
+	que salgan con su intento,
+	y aquel varón magnánimo que atento
+	vive a hacer sus trofeos inmortales
+	ha de vivir a costa de sus males.
+HÉRCULES
+	Es engaño, que un hombre
+	no puede mayor fama, mayor nombre
+	adquirir que mostrando desta suerte
+	que se puso de parte de su muerte,
+	para que ella a matarle se atreviera,
+	que a mí sin mí mi muerte me temiera.
+JASÓN
+	La grande causa dudo
+	que a ese despecho avasallarte pudo.
+TESEO
+	Que haya ocasión no creo
+	para tanto furor.
+HÉRCULES
+		¡Ay, gran Teseo!
+	¡Ay, gran Jasón!, cuyos valientes bríos
+	bien acredita el ser amigos míos,
+	y ¡ay, amigos leales!,
+	hoy se ha llenado el número a mis males;
+	si la causa supiérades que tengo,
+	la desesperación a que prevengo
+	mi valor y mi vida
+	de los dos no estorbada, persuadida
+	fuera.
+JASÓN
+		Ya que has llamado
+	amigos a los dos, de tu cuidado
+	haz a los dos testigos.
+HÉRCULES
+	Es tal que aun embarazan los amigos,
+	mas, pues los tres en tantas ocasiones
+	tres almas, vidas tres, tres corazones
+	en solo uno fundimos
+	y con uno no más los tres vivimos,
+	atentos escuchad mis instrumentos
+	(mas no los escuchéis ni estéis atentos).
+	Ya sabéis que soy aquel
+	racional monstruo valiente
+	que ha coronado a su fama
+	de plumas y de laureles,
+	tan hecho siempre a vencer
+	y a matar tan hecho siempre
+	que apenas supe mi vida
+	cuando supieron su muerte:
+	díganlo a voces las fieras;
+	la fama, el tiempo lo cuente;
+	la memoria lo repita,
+	pues en el primero albergue
+	de mi cuna a dos sedientas,
+	dos tiranas, dos aleves
+	víboras, que de mi sangre
+	se alimentaban crueles,
+	eché las manos, sintiendo
+	que en el corazón me muerden,
+	y sin instinto y con rabia
+	las apreté de tal suerte
+	que reventaron –¿qué mucho
+	que allí mis manos venciesen,
+	si eran diez áspides y ellas
+	dos víboras solamente?–.
+	Crecí prodigio, crecí
+	asombro a la humana gente
+	tan destinado a fatigas,
+	a desaires y a desdenes
+	de la fortuna que toda
+	su saña junta parece
+	que contra mí amotinada
+	o se conjura o se mueve,
+	pero en vano, pues no hubo
+	fiera que me redimiese
+	ni por lo veloz su piel
+	ni su testa por lo fuerte:
+	aquélla para vestirme
+	al arbitrio de sus pieles
+	y ésta para que de adorno
+	a mis umbrales sirviese,
+	que, como rey destos montes,
+	en sus frisos y linteles
+	tengo guarda de animales
+	para cuando salga y entre.
+	El rey de todos lo diga,
+	dígalo el signo rugiente
+	de julio, a cuyo bramido
+	todo el Flegra se estremece,
+	pues tal vez que para mí
+	vino erizando la frente,
+	escarapelando el cuello
+	la melena que de él pende,
+	rugando el ceño y sacando
+	de la vainas donde tiene
+	sus corvos alfanjes, yo
+	con las manos solamente
+	hice la presa en su boca,
+	donde no pudo saberse
+	de sus dientes o mis dedos
+	o cuáles los dedos fuesen
+	o cuáles los dientes, pues,
+	competidos igualmente,
+	yo le mordí con las manos
+	y él me tentó con los dientes,
+	sin saber uno de otro
+	quién es, quién toca o quién muerde
+	hasta que, desencajados
+	los dos dentados arneses,
+	abrió de una vez la boca,
+	haciéndole que se diese
+	con esta parte en el lomo
+	y con estotra en el vientre;
+	el espín lo diga, pues,
+	aunque de sus flechas juegue,
+	no le bastó para mí
+	el ser aljaba viviente;
+	Aqueloo en las formas varias
+	de hombre, de toro y de sierpe,
+	cuyo trofeo es la copia
+	que Flora abundante vierte;
+	Gerïón con tres semblantes
+	de tres rostros diferentes,
+	siendo trofeo a mis plantas
+	cuando de mis manos...
+JASÓN
+		Tente,
+	que para saber tus hechos
+	no importa que los acuerdes,
+	mas, si para desahogarte
+	quiere el dolor que los cuentes,
+	no repitas los menores
+	cuando los mayores puedes:
+	di que al trifauce feroz
+	Cerbero, que a cargo tiene
+	el infierno, siendo guarda
+	de todo el Cocito, prendes;
+	di que sus gargantas tres,
+	a solo un yugo obedientes,
+	dominaron las cervices
+	hasta aquel punto rebeldes,
+	cuya saliva escupida
+	con las bascas de la muerte
+	fue tósigo de las yerbas
+	que él escupe y ellas beben;
+	di que a las fieras arpías
+	de Fineo, aves crueles
+	que con rostro humano y plumas
+	monstruos de entrambas especies,
+	desterraste; que a la Hidra,
+	cuerpo de gargantas siete,
+	venciste, atajando que una
+	otras tantas acreciente;
+	di...
+TESEO
+		¿Por qué le embarazas
+	que él lo diga, si tú emprendes
+	para atajar sus discursos
+	alargar los tuyos? Cesen
+	unos y otros con decir,
+	por que sus fatigas lleguen
+	a su número, que Atlante,
+	monte africano eminente,
+	coluna en que todo el cielo
+	descansa, llegando a verse
+	con el peso fatigado
+	de esa fábrica celeste,
+	le pidió socorro y él
+	poniendo el hombro y la frente
+	al ya desquiciado rumbo
+	que, trastornándose débil,
+	hizo titubear sus polos,
+	hizo reclinar sus ejes,
+	le aseguró, dando espacio
+	para que Atlante se aliente
+	en tanto que él sustenía
+	toda esa luz, todo ese
+	pavimento que en la estancia
+	de once globos trasparentes
+	son estrado de las diosas
+	y de los dioses doseles;
+	que no es justo, no, que tú
+	hoy sus vitorias renueves,
+	cuando de sus sentimientos
+	estamos los dos pendientes.
+HÉRCULES
+	Pues yo que tantas fatigas
+	vencí, que tan excelentes
+	aplausos gané, a una pena
+	postrado estoy y obediente,
+	porque quiere una hermosura
+	que a su dolor me sujete,
+	que a su violencia me rinda,
+	pero ¿qué remedio tiene
+	rendirme ni sujetarme,
+	si una hermosura lo quiere?
+	No ya pienses, ¡ay, Jasón!,
+	¡ay, Teseo!, no ya pienses,
+	porque una hermosura dije,
+	que hoy mi desdicha procede
+	de aquel linaje, de aquel
+	género, de aquella especie
+	de amor que otra vez me vio,
+	a su precepto obediente,
+	enamorado de Heyole,
+	hilando con sus mujeres;
+	otra especie, otro linaje,
+	otro género padece
+	de amor mi vida y aun dije
+	mal de amor porque no puede
+	ser amor el que es agravio,
+	ser lisonja la que es muerte.
+	Deyanira... al pronunciarla
+	o se hiela o se enmudece
+	el labio, falta la voz,
+	duda el alma, el pecho teme
+	y la lengua titubea,
+	tartamuda o balbuciente,
+	porque es más decir su agravio
+	un hombre que padecerle.
+	Deyanira, linfa bella
+	de las cristalinas fuentes,
+	náyade destos peñascos,
+	ninfa de aquestos vergeles,
+	dríade de aquestos montes
+	a quien la nobleza y plebe
+	de las flores y cristales
+	saludaron tantas veces
+	por Venus de sus amores,
+	por Flora de sus claveles,
+	por Dïana de sus selvas
+	y de sus frutos por Ceres;
+	Deyanira, cuyos ojos,
+	si amanecen, no amanece,
+	a todas horas del día
+	eran dueños del oriente;
+	Deyanira, a cuyo pie
+	se redujo en cárcel breve
+	toda la esfera del fuego
+	solo a un átomo de nieve;
+	Deyanira, esposa mía,
+	a quien como al alma quiere
+	el alma, porque es mi esposa
+	y mi dama juntamente;
+	de mi lecho, de mis brazos
+	de mis ojos... ¡Oh, reviente
+	el pecho antes que lo diga!,
+	aunque ya no me parece
+	que habré menester decirlo,
+	pues ello mismo se entiende
+	con nombrarla y con llorarla,
+	pues tierna y rabiosamente
+	no se llora una hermosura
+	sino el día que se pierde.
+	No imaginéis que murió,
+	que ese mal con ser tan fuerte
+	fuera consuelo; mirad
+	los dos, pues que sois prudentes,
+	cuál será mi pena, cuando
+	fuera consuelo su muerte.
+	Un monstruo de esos a quien,
+	porque los caballos prenden,
+	medio hombres, medio caballos,
+	engañado el mundo cree;
+	un centauro, cuyo nombre
+	Neso ha sido, de mi albergue
+	la ha robado. ¡Ay, infelice!,
+	ved los dos cuán dignamente
+	quieren los hados que yo
+	me mate y me desespere,
+	pues como amante y marido
+	lloro esta ofensa dos veces,
+	y más no habiendo esperanza
+	que mis desdichas remedie,
+	que aun la venganza es en vano,
+	porque estos centauros tienen
+	por patria el mar y la tierra
+	y, si con ella trasciende
+	los montes, es imposible
+	seguirle; si pasar quiere
+	a esotra parte del mundo,
+	por esos mares no puede
+	mi furia alcanzarle; ved
+	si es mi desdicha bien fuerte,
+	pues hay mortal que me agravie
+	y no hay dioses que me venguen.
+TESEO
+	Hércules, no desconfíes
+	de la venganza, pues eres
+	africano honor de Tebas
+	y horror del orbe. Si temes
+	que las malezas incultas
+	humano pie no penetre,
+	yo me atrevo a entrar por ellas
+	sin que el cansancio me fuerce
+	a dejarle de seguir,
+	aunque corra velozmente,
+	pues sin ser centauro yo
+	tengo un caballo obediente
+	a las leyes de la rienda
+	y de la espuela a las leyes;
+	Équite, el primero que
+	domó su cerviz rebelde,
+	me le ha presentado; en él
+	cuanto está el mar continente
+	registraré.
+JASÓN
+		Pues, si tú
+	el orbe a correr te atreves,
+	por la tierra, yo me atrevo
+	sobre esas espumas leves
+	del mar a seguirle; Argos,
+	docto artífice excelente,
+	ha añadido a sus espumas
+	un monstruo que velozmente
+	corre por ellas a cuantos
+	climas el aire le lleve:
+	águila sin plumas es,
+	delfín sin escamas este
+	prodigio, pues que, nadando
+	y volando juntamente,
+	a un mismo tiempo es monarca
+	de las aves y los peces.
+HÉRCULES
+	Pues, si tres los ofendidos
+	somos y tres partes tiene
+	el mundo, en este caballo
+	tú corre el Asia y tú en ese
+	hipogrifo de las ondas
+	pasa a Europa, que mi suerte
+	dice por ciertas noticias
+	que yo en África me quede.
+	Ni ignorado seno el mar,
+	ni seno ignorado deje
+	la tierra que no registren
+	nuestros ánimos valientes.
+TESEO
+	Esa palabra te doy,
+	como me des solamente
+	de plazo un año.
+JASÓN
+		Yo el mismo
+	pido y desde aquí promete
+	mi valor dentro de un año
+	volver a este sitio a verte
+	y desto Hércules te doy
+	mano y palabra mil veces.
+TESEO
+	Yo también.
+HÉRCULES
+		Yo las aceto.
+JASÓN
+	Felice aquel que trujere
+	mejor suceso a tus ojos.
+TESEO
+	Pues más mi valor no espere.
+JASÓN
+	No espere más mi osadía.
+TESEO
+	Équite ingenioso, enfrene
+	tu disciplina ese rayo.
+JASÓN
+	Argos invencible, quiebre
+	al mar la espuma ese asombro.
+TESEO
+	Pensando que corra, vuele
+	domado el céfiro.
+JASÓN
+		El vidro
+	salobre, ese monstruo leve
+	o con la quilla le rice
+	o con el buco le encrespe.
+LOS DOS
+	Júpiter quede contigo.
+HÉRCULES
+	Júpiter con bien os lleve.
+<i>Vanse los tres hombres.
+NOCHE
+	Esta división que han hecho
+	estos tres héroes valientes
+	de las tres partes del mundo,
+	adonde a los tres suceden
+	tres maravillas, en tres
+	teatros por tres diferentes
+	autores son la comedia
+	que aquesta noche ha de verse.
+	Un corto ingenio la ha escrito,
+	si bien por disculpa tiene
+	sus mismos errores, pues
+	con lo que yerra obedece;
+	y, pues a la novedad
+	algún aplauso se debe,
+	pedidle las dos, pues sois
+	a quien festejar compete
+	en Retiros y jardines
+	tanto generoso huésped.
+<i>Vase.
+PALES
+	Cuarto planeta de España...
+FLORA
+	De Francia divina fénix...
+PALES
+	...cuya luz no acaba nunca,...
+FLORA
+	...cuya edad anima siempre,...
+PALES
+	...bello Baltasar...
+FLORA
+		...hermosa
+	Ana Antonia...
+PALES
+		...en cuyo oriente...
+FLORA
+	...en cuya infancia...
+PALES
+		...las dichas
+	asisten,...
+FLORA
+		...los hados reinen,...
+PALES
+	...aquesta fiesta os presenta
+	quien más serviros pretende.
+FLORA
+	no habré menester decir
+	quién es, pues que ya se entiende
+	que es la Nise laureada
+	de virtudes excelente.
+PALES
+	Por ella el perdón merezca,
+	pues por sí no le merece
+FLORA
+	para que el prólogo acabe
+	donde la comedia empiece.
